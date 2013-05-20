@@ -1,8 +1,4 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-
-package ${package};
+package org.pigarchetype;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -83,4 +79,3 @@ public class PigAssert
         }
     }
 }
-

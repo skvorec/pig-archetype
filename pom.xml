@@ -2,29 +2,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.pigarchetyper</groupId>
-    <artifactId>archetype</artifactId>
+    <groupId>org.pigarchetype</groupId>
+    <artifactId>pig-aggregator</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>maven-archetype</packaging>
-    <name>pig-archetyper</name>
-  
-    <build>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.archetype</groupId>
-                <artifactId>archetype-packaging</artifactId>
-                <version>2.1</version>
-            </extension>
-        </extensions>
-				
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-archetype-plugin</artifactId>
-                    <version>2.2</version>
-                </plugin>                
-            </plugins>
-        </pluginManagement>
-    </build>
- 
+    <packaging>pom</packaging>
+
+    <name>pig-aggregator</name>
+
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>archetype</module>
+        <module>asserts</module>
+    </modules>
+	
 </project>

@@ -14,6 +14,7 @@ import org.apache.pig.backend.executionengine.ExecException;
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.pigarchetype.PigAssert;
 
 public class PigTest {
 
