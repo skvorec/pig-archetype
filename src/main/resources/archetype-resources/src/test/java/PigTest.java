@@ -19,6 +19,7 @@ public class PigTest {
 
     private static final File DEST_SCRIPT = new File("scripts/scriptToTest.pig");
     private static final File DEST_DATA = new File("scripts/input.data");
+    private static final File DEST_EXPECTED_OUTPUT_DIR = new File("scripts/expected-output");
     private static final File ACTUAL_OUTPUT_DIR = new File("target/pig-output");
     
 
@@ -32,8 +33,15 @@ public class PigTest {
     //Please delete this init method after the first run
     @BeforeClass
     public void firstRunInit() throws IOException {
-        FileUtils.copyFile(new File(${script}), DEST_SCRIPT);
-        FileUtils.copyFile(new File(${input}), DEST_DATA);
+        if(!DEST_SCRIPT.exists()){
+            FileUtils.copyFile(new File("${script}"), DEST_SCRIPT);
+        }
+        if(!DEST_DATA.exists()){
+            FileUtils.copyFile(new File("${input}"), DEST_DATA);
+        }
+        if(!DEST_EXPECTED_OUTPUT_DIR.exists()){
+            FileUtils.copyDirectory(new File("${output}"), DEST_EXPECTED_OUTPUT_DIR);
+        }        
     }
 
     @Test
@@ -47,6 +55,6 @@ public class PigTest {
         pigServer.executeBatch();
         pigServer.shutdown();
 
-        PigAssert.assertOutputEquals(null, new File("target/pig-output"));
+        PigAssert.assertOutputEquals(DEST_EXPECTED_OUTPUT_DIR, new File("target/pig-output"));
     }
 }
