@@ -27,4 +27,5 @@ Known problems:
 
 -- a beauty way to copy script, input data and expected output data is not found yet. So, these files are copied during first test run. After the first run you should delete method firstRunInit();
 
--- in win7 PigServer tries launch chmod command and test fails
+--[SOLVED] in win7 PigServer tries launch chmod command and test fails
+Solution: download cygwin chmod.exe from here: http://javaprotlib.sourceforge.net/packages/io/howtofixhadoop.html
