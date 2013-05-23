@@ -35,7 +35,7 @@ public class InitMojo extends AbstractMojo
             FileUtils.copyFile(new File(properties.getProperty("input")), destInput);
             FileUtils.copyDirectory(new File(properties.getProperty("output")), destOutput);
         } catch (IOException ex) {
-            throw new MojoExecutionException("initialisation failed", ex);
+            throw new MojoExecutionException("Copying initial files to project structure failed", ex);
         }
     }
 }
