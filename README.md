@@ -3,7 +3,9 @@ pig-archetype
 
 This is maven archetype that creates project for testing pig scripts.
 
-It consist of two modules: a module with assert class and a module with maven archetype. In fact, archetype should not contains assert module, but I think using separate module is the best way in this case.
+It consist of three modules: a module with assert class, a module with maven archetype and a module with maven plugin for initialization project. 
+In fact, archetype should not contains assert module, but I think using separate module is the best way in this case.
+
 Archetype has three non standart parameters:
 
 -Dscript - a path to script that will be tested
@@ -12,8 +14,10 @@ Archetype has three non standart parameters:
 
 -Doutput - a path to output dir with expected script output data 
 
+To copy all these files to project structure, use following option of archetype plugin: -Dgoals=org.pigarchetype:init-maven-plugin:pig-init
 
 A generated project consist of one test file - PigTest.java that launches PigServer using ExecType.Local mode, runs script and compares actual output with expected.
+
 
 
 Assumptions:
@@ -24,8 +28,5 @@ Assumptions:
 
 
 Known problems:
-
--- a beauty way to copy script, input data and expected output data is not found yet. So, these files are copied during first test run. After the first run you should delete method firstRunInit();
-
 --[SOLVED] in win7 PigServer tries launch chmod command and test fails
 Solution: download cygwin chmod.exe from here: http://javaprotlib.sourceforge.net/packages/io/howtofixhadoop.html
