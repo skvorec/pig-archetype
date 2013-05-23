@@ -15,8 +15,9 @@
     </properties>
 
     <modules>
-        <module>archetype</module>
+        <module>init-maven-plugin</module>
         <module>asserts</module>
+        <module>archetype</module>        
     </modules>
 	
 </project>

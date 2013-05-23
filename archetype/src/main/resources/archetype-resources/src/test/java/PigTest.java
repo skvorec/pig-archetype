@@ -4,17 +4,15 @@
 
 package ${package};
 
-import java.io.IOException;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.pig.ExecType;
 import org.apache.pig.PigServer;
 import org.apache.pig.backend.executionengine.ExecException;
-import org.apache.commons.io.FileUtils;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 import org.pigarchetype.PigAssert;
+import org.testng.annotations.Test;
 
 public class PigTest {
 
@@ -31,20 +29,7 @@ public class PigTest {
         return result;
     }
 
-    //Please delete this init method after the first run
-    @BeforeClass
-    public void firstRunInit() throws IOException {
-        if(!DEST_SCRIPT.exists()){
-            FileUtils.copyFile(new File("${script}"), DEST_SCRIPT);
-        }
-        if(!DEST_DATA.exists()){
-            FileUtils.copyFile(new File("${input}"), DEST_DATA);
-        }
-        if(!DEST_EXPECTED_OUTPUT_DIR.exists()){
-            FileUtils.copyDirectory(new File("${output}"), DEST_EXPECTED_OUTPUT_DIR);
-        }        
-    }
-
+    
     @Test
     public void pigTest() throws ExecException, IOException {
 

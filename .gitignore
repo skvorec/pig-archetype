@@ -1,3 +1,4 @@
 /target/
 /asserts/target/
 /archetype/target/
+/init-maven-plugin/target/

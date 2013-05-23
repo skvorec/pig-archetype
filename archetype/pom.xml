@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.pigarchetype</groupId>
-    <artifactId>archetype</artifactId>
+    <artifactId>pig-archetype</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
     <name>pig-archetype</name>
   
-   <parent>
+    <parent>
         <groupId>org.pigarchetype</groupId>
         <artifactId>pig-aggregator</artifactId>
         <version>1.0-SNAPSHOT</version>
@@ -22,7 +22,7 @@
                 <version>2.1</version>
             </extension>
         </extensions>
-				
+			
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -33,12 +33,18 @@
         </pluginManagement>
     </build>
 	
-	<dependencies>
-		<dependency>
+    <dependencies>
+        <dependency>
             <groupId>org.pigarchetype</groupId>
             <artifactId>asserts</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.pigarchetype</groupId>
+            <artifactId>init-maven-plugin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
  
 </project>

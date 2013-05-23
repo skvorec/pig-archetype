@@ -17,5 +17,12 @@
         <fileSet filtered="true" packaged="true">
             <directory>src/test/java</directory>
         </fileSet>
+        
+        <fileSet filtered="true" >
+            <directory></directory>
+            <includes>
+                <include>initial.properties</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
